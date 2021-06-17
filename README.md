@@ -4,7 +4,7 @@
 * web app embed with `ZIPNet` (Zero Inflated Poisson Network) proposed in the master's thesis.
 
 ## Main Functionality
-* given an arbitrary image, the estimated number of people is printed from the embedded neural network `ZIPNet`.
+* given an arbitrary image, the embedded neural network ZIPNet outputs the estimated number of people and the estimated probability of an environment in which people do not exist.
 
 ## Requirements
 * `Python3`
