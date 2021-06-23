@@ -5,8 +5,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      p: 0,
-      pred: 0,
+      p: "",
+      pred: "",
     };
   }
 
@@ -31,6 +31,10 @@ class Home extends Component {
     );
     var p = this.state.p;
     var pred = this.state.pred;
+    if (this.state.p !== "") {
+      p = p.toFixed(2);
+      pred = pred.toFixed(2);
+    }
     return (
       <div className="container p-3">
         <div className="py-3">
@@ -51,12 +55,12 @@ class Home extends Component {
             &nbsp;
             <i className="fa fa-user-times bg-transparent "></i>
             &nbsp;
-            {": " + p.toFixed(2)}
+            {": " + p}
           </div>
           <div className="bg-transparent small p-3">
             <i className="fa fa-users bg-transparent "></i>
             &nbsp;
-            {": " + pred.toFixed(2)}
+            {": " + pred}
           </div>
         </div>
       </div>
