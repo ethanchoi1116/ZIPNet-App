@@ -49,7 +49,7 @@ class Home extends Component {
             {profile_preview}
           </div>
         </div>
-        <div className="w-100 h-100 button-container p-3 d-flex justify-content-evenly bg-white text-decoration-none text-dark">
+        <div className="w-100 h-100 button-container p-3 d-flex justify-content-evenly bg-white text-decoration-none text-dark my-3">
           <div className="bg-transparent small p-3">
             <i className="fa fa-pie-chart bg-transparent "></i>
             &nbsp;
