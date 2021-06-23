@@ -1,1 +1,1 @@
-web: gunicorn app.main
+web: sh -c 'cd./app/ && python main.py'
