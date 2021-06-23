@@ -14,7 +14,7 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 app = FastAPI()
 
-origins = ["http://localhost:3000"]
+origins = ["https://zipnet.herokuapp.com"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
