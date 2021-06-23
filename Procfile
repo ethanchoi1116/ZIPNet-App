@@ -1,1 +1,1 @@
-web: gunicorn 'cd ./app/' && exec main.py
+web: gunicorn 'cd ./app/' && exec python main.py
