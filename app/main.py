@@ -26,7 +26,7 @@ app.add_middleware(
 model = tf.keras.models.load_model("../model/zipnet")
 
 
-@app.get("/index")
+@app.get("/")
 async def root():
     return {"message": "This is Crowd Counting API based on ZIPNet!"}
 
