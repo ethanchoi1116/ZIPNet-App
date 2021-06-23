@@ -61,14 +61,16 @@ class ZIPNet(Model):
             include_top=False, weights="imagenet", input_shape=(224, 224, 3)
         )
         self.base.trainable = True
-        fine_tune_at = 20
+        fine_tune_at = 19
         for layer in self.base.layers[:fine_tune_at]:
             layer.trainable = False
 
         self.gap = GlobalAveragePooling2D()
         self.h1 = Dense(64, activation="relu", kernel_initializer="he_normal")
-        self.h_lam_1 = Dense(32, activation="relu", kernel_initializer="he_normal")
-        self.h_pi_1 = Dense(32, activation="relu", kernel_initializer="he_normal")
+        self.h_lam_1 = Dense(16, activation="relu", kernel_initializer="he_normal")
+        self.h_lam_2 = Dense(8, activation="relu", kernel_initializer="he_normal")
+        self.h_pi_1 = Dense(16, activation="relu", kernel_initializer="he_normal")
+        self.h_pi_2 = Dense(8, activation="relu", kernel_initializer="he_normal")
         self.lam = Dense(1, activation="exponential", kernel_initializer="he_normal")
         self.pi = Dense(1, activation="sigmoid", kernel_initializer="he_normal")
 
@@ -80,9 +82,11 @@ class ZIPNet(Model):
         gap = self.gap(base)
         h1 = self.h1(gap)
         h_lam_1 = self.h_lam_1(h1)
+        h_lam_2 = self.h_lam_2(h_lam_1)
         h_pi_1 = self.h_pi_1(h1)
-        lam = self.lam(h_lam_1)
-        pi = self.pi(h_pi_1)
+        h_pi_2 = self.h_pi_2(h_pi_1)
+        lam = self.lam(h_lam_2)
+        pi = self.pi(h_pi_2)
         return lam, pi
 
     # zip loss
