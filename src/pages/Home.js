@@ -71,7 +71,7 @@ class Home extends Component {
           <span>Preview</span>
         </div>
         <div className="w-100 preview-container my-3">
-          <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-transparent p-4">
+          <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-transparent px-5">
             {profile_preview}
           </div>
         </div>
