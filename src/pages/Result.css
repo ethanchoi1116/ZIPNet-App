@@ -1,0 +1,9 @@
+.preview-container {
+  height: 240px;
+}
+
+.preview {
+  height: 80%;
+  width: auto;
+  border-radius: 15px;
+}

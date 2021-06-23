@@ -1,0 +1,19 @@
+.input-container {
+  border-radius: 15px;
+  background-color: #e4e6eb;
+  height: 250px;
+}
+
+.preview-container {
+  height: 250px;
+}
+
+.preview {
+  height: 80%;
+  width: auto;
+  border-radius: 15px;
+}
+
+.button-container {
+  border-radius: 15px;
+}

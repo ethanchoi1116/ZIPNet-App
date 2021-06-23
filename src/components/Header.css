@@ -1,0 +1,15 @@
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.title-link {
+  color: #ed8554;
+  text-decoration: none;
+}
+
+.title-link:hover {
+  color: #ed8554;
+}
