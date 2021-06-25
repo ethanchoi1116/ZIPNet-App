@@ -35,6 +35,11 @@ plt.style.use("seaborn-paper")
 # loading full dataset (y, X)
 y, X = make_xy()
 
+# underscaling the observed data for better fit for ZIP
+idx = np.where(y <= np.median(y))[0]
+y = y[idx]
+X = X[idx]
+
 # splitting dataset into train-validation-test dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 X_train, X_val, y_train, y_val = train_test_split(
