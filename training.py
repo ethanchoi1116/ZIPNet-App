@@ -1,7 +1,7 @@
 """
 module for training
 and exporting ZIPNet
-with underlying pretrained VGG-16
+with underlying pretrained MobileNetV2
 """
 
 import os
@@ -49,7 +49,7 @@ X_train, X_val, y_train, y_val = train_test_split(
 # iterable test dataset for memory efficiency
 test_dataset = tf.data.Dataset.from_tensor_slices((X_test, y_test))
 
-# ZIPNet with pretrained VGG-16
+# ZIPNet with pretrained MobileNetV2
 class ZIPNet(Model):
     def __init__(self):
         super().__init__()
@@ -62,11 +62,11 @@ class ZIPNet(Model):
         # layers
         self.random_contrast = RandomContrast((0.1, 2))
         self.random_flip = RandomFlip("horizontal")
-        self.base = tf.keras.applications.VGG16(
+        self.base = tf.keras.applications.MobileNetV2(
             include_top=False, weights="imagenet", input_shape=(224, 224, 3)
         )
         self.base.trainable = True
-        fine_tune_at = 19
+        fine_tune_at = len(self.base.layers)
         for layer in self.base.layers[:fine_tune_at]:
             layer.trainable = False
 
@@ -166,7 +166,7 @@ print("training model...")
 batch_size = 32
 model = ZIPNet()
 model.build(input_shape=(None, X_train.shape[1], X_train.shape[2], X_train.shape[3]))
-model.compile(optimizer=Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.999))
+model.compile(optimizer=Adam(learning_rate=0.00001, beta_1=0.9, beta_2=0.999))
 history = model.fit(
     x=X_train,
     y=y_train,
