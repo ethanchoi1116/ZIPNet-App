@@ -13,7 +13,7 @@ class Home extends Component {
   componentDidMount() {
     let image = new FormData();
     image.append("file", this.props.location.state.file);
-    fetch("https://zipnet-api.herokuapp.com/predict", {
+    fetch("https://zipnet-api.herokuapp.com/api/predict", {
       method: "POST",
       body: image,
     })
