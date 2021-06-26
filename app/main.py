@@ -25,7 +25,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = tf.keras.models.load_model("../model/zipnet", compile=False)
+model = tf.keras.models.load_model("model/zipnet", compile=False)
 
 
 @app.get("/api")
