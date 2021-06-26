@@ -1,1 +1,1 @@
-web: sh -c 'cd ./app && python main.py'
+worker: sh -c 'cd ./app && python main.py'
