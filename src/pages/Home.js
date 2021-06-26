@@ -12,15 +12,6 @@ class Home extends Component {
     };
   }
 
-  // to wake up api server
-  componentDidMount() {
-    fetch("https://zipnet-api.herokuapp.com/", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }
-
   handleFileOnChange = (event) => {
     event.preventDefault();
     let reader = new FileReader();
