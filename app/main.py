@@ -4,7 +4,6 @@ using FastAPI framework
 """
 
 import os
-from tensorflow.python.distribute.multi_worker_util import worker_count
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
