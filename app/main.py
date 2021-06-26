@@ -10,6 +10,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import tensorflow as tf
 
+tf.keras.backend.clear_session()
+
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 app = FastAPI()
@@ -23,7 +25,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = tf.keras.models.load_model("../model/zipnet")
+model = tf.keras.models.load_model("../model/zipnet", compile=False)
 
 
 @app.get("/api/")
