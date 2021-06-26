@@ -26,12 +26,12 @@ app.add_middleware(
 model = tf.keras.models.load_model("../model/zipnet")
 
 
-@app.get("/")
+@app.get("/api/")
 async def root():
     return {"message": "This is Crowd Counting API based on ZIPNet!"}
 
 
-@app.post("/predict")
+@app.post("/api/predict")
 async def predict(file: UploadFile = File(...)):
     """
     Args:
