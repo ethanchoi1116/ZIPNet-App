@@ -13,7 +13,7 @@ class Home extends Component {
   componentDidMount() {
     let image = new FormData();
     image.append("file", this.props.location.state.file);
-    fetch("https://3.35.220.215:5000/api/predict", {
+    fetch("https://13.124.103.255:5000/api/predict", {
       method: "POST",
       body: image,
     })
