@@ -4,6 +4,7 @@ using FastAPI framework
 """
 
 import os
+from tensorflow.python.distribute.multi_worker_util import worker_count
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -54,4 +55,6 @@ if __name__ == "__main__":
         "main:app",
         host="0.0.0.0",
         port=int(os.getenv("PORT", default=8000)),
+        reload=True,
+        workers=1,
     )
