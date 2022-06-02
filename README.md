@@ -4,6 +4,10 @@
 * web app embed with `ZIPNet` (Zero Inflated Poisson Network or `ZIP CNN`) proposed in the master's thesis.
 * trained on `NWPU-Crowd Dataset` (https://gjy3035.github.io/NWPU-Crowd-Sample-Code/)
 
+## Presentation Slide & Research Paper
+* [Presentation](https://drive.google.com/file/d/1w0xykQWhnmOI7NKTxPlaI8dB67mLmPr0/view?usp=sharing)
+* [Research Paper](https://drive.google.com/file/d/1p1hhuesDItSXqoIGKobVMonx6xzNK6zC/view?usp=sharing)
+
 ## Interface
 
 ## Model Comparison
