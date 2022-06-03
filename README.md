@@ -1,7 +1,8 @@
 # ZIPNet-App
 
 ## Description
-* web app embed with `ZIPNet` (Zero Inflated Poisson Network or `ZIP CNN`) proposed in the master's thesis.
+* demo web application of `ZIPNet` (Zero Inflated Poisson Network or `ZIP CNN`) proposed in the master's thesis.
+* `ZIPNet` has a neural network architecture and a loss function for modeling various complex count data with excess zeros.
 * trained on `NWPU-Crowd Dataset` (https://gjy3035.github.io/NWPU-Crowd-Sample-Code/)
 
 ## Presentation Slide & Research Paper
